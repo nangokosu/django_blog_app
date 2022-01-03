@@ -14,6 +14,7 @@
                 <a href="{% url 'post_new' %}">+ New Blog Post</a>
             </div>
         </header>
+        {% block account_msg %}
         <div>
             {% if user.is_authenticated %}
             <p>Hi {{ user.username }}!</p>
@@ -24,6 +25,7 @@
             <p><a href="{% url 'signup' %}">No Account? Sign Up</a></p>
             {% endif %}
         </div>
+        {% endblock account_msg %}
         <div>
             {% block content %}
             {% endblock content %}

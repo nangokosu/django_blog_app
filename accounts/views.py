@@ -7,4 +7,6 @@ from django.views import generic
 class SignUpView(generic.CreateView):
     form_class=UserCreationForm
     success_url=reverse_lazy('login')
+    # For all generic class-based views, the URLs are not loaded when the file is imported
     template_name='registration/signup.html'
+    
